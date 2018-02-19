@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 
 using Xamarin.Forms;
+using XamarinFormsRssFeed.Views;
 
 namespace XamarinFormsRssFeed
 {
@@ -13,7 +14,7 @@ namespace XamarinFormsRssFeed
         {
             InitializeComponent();
 
-            MainPage = new XamarinFormsRssFeed.MainPage();
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
