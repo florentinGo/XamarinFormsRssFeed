@@ -1,9 +1,11 @@
-﻿using System;
+﻿using GalaSoft.MvvmLight.Ioc;
+using GalaSoft.MvvmLight.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using Xamarin.Forms;
+using XamarinFormsRssFeed.Services;
 using XamarinFormsRssFeed.Views;
 
 namespace XamarinFormsRssFeed
@@ -13,8 +15,12 @@ namespace XamarinFormsRssFeed
         public App()
         {
             InitializeComponent();
-
-            MainPage = new NavigationPage(new MainPage());
+            var nav = new NavigationService();
+            nav.Configure(Locator.MainPage, typeof(MainPage));
+            var firstPage = new NavigationPage(new MainPage());
+            SimpleIoc.Default.Register<INavigationService>(() => nav);
+            nav.Initialize(firstPage);
+            MainPage = firstPage;
         }
 
         protected override void OnStart()

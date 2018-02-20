@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Windows.UI.Xaml;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamarinFormsRssFeed.ViewModels;
 
 namespace XamarinFormsRssFeed.Views
 {
@@ -19,10 +20,10 @@ namespace XamarinFormsRssFeed.Views
             feedsTable = new FeedsTable();
         }
 
-        private async void Validate(object sender, RoutedEventArgs e)
+        private async void ValidateButton_Clicked(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            var x = await DisplayAlert("Navigation","Je veux naviguer","OK","NON");
+            var x = await DisplayAlert("Navigation", "Je veux naviguer", "OK", "NON");
             
         }
     }

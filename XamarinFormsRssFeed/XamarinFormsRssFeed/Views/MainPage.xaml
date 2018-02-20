@@ -2,10 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinFormsRssFeed.Views.MainPage"
+             xmlns:local="clr-namespace:XamarinFormsRssFeed.ViewModels"
              Title="Agixis Feeder">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:MainPageViewModel x:Key="viewModel">
+            </local:MainPageViewModel>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
-            <Button Text="Valider" VerticalOptions="StartAndExpand" HorizontalOptions="EndAndExpand"/>
+            <Button x:Name="ValidateButton"  Text="Ajouter" VerticalOptions="StartAndExpand" HorizontalOptions="EndAndExpand"/>
             <Label Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
